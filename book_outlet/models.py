@@ -7,8 +7,7 @@ class Book(models.Model):
     rating= models.IntegerField(validators=[MinValueValidator(1),MaxValueValidator(5)])
     author =models.CharField(max_length=100,null=True)
     is_bestselling_book=models.BooleanField(default=False)
-    slug=models.SlugField(default="", null=False) 
-
+    slug=models.SlugField(default="", null=False,db_index=True) #db_index is just for performance
 
 
     def save(self,*args, **kwargs):
