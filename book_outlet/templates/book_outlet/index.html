@@ -6,7 +6,10 @@ All Books
 {% block content %}
 <ul>
 {% for book in books %}
-<li><a href="{% url "book-detail" book.slug %}">{{book.title}}</a> (Rating: {{book.rating}})}</li>
+<li><a href="{% url "book-detail" book.slug %}">{{book.title}}</a> (Rating: {{book.rating}})</li>
 {% endfor %}
 </ul>
+
+<h1>Total number of book: {{total_number_of_books}}</h1>
+<h1>Average Ratings: {{average_rating.rating__avg}}</h1>
 {% endblock %} 
